@@ -8,7 +8,9 @@ from .utils import normalize_columns
 def load_historical_excel(path: Path) -> pd.DataFrame:
     """Đọc toàn bộ sheet 2023-2025 và thêm cột nguồn sheet."""
     frames = []
-    for sheet in pd.ExcelFile(path).sheet_names:
+    with pd.ExcelFile(path) as excel_file:
+        sheet_names = excel_file.sheet_names
+    for sheet in sheet_names:
         # File lịch sử có thể tách theo nhiều sheet/năm, nên gom toàn bộ lại
         # và giữ tên sheet để truy vết nguồn dữ liệu khi cần kiểm tra.
         df = pd.read_excel(path, sheet_name=sheet)
@@ -28,6 +30,7 @@ def load_2026_excel(path: Path) -> pd.DataFrame:
 def load_cost_excel(path: Path) -> pd.DataFrame:
     """Đọc file giá vốn theo sản phẩm 2026."""
     # File giá vốn chỉ cần sheet đầu tiên; normalize_columns giúp tránh lỗi do tên cột dư khoảng trắng.
-    sheet_name = pd.ExcelFile(path).sheet_names[0]
+    with pd.ExcelFile(path) as excel_file:
+        sheet_name = excel_file.sheet_names[0]
     df = pd.read_excel(path, sheet_name=sheet_name)
     return normalize_columns(df)

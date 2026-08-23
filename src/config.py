@@ -11,6 +11,7 @@ STAGING_DIR = DATA_DIR / "staging"
 CLEAN_DIR = DATA_DIR / "clean"
 MART_DIR = DATA_DIR / "mart"
 MODEL_DATA_DIR = DATA_DIR / "model"
+AI_AGENT_DIR = DATA_DIR / "ai_agent"
 
 NOTEBOOK_DIR = PROJECT_DIR / "notebooks"
 OUTPUT_DIR = PROJECT_DIR / "outputs"
@@ -33,6 +34,7 @@ def ensure_directories() -> None:
         CLEAN_DIR,
         MART_DIR,
         MODEL_DATA_DIR,
+        AI_AGENT_DIR,
         NOTEBOOK_DIR,
         EXCEL_OUTPUT_DIR,
         CHART_OUTPUT_DIR,
