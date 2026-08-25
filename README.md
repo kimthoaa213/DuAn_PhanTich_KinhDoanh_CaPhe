@@ -1,4 +1,4 @@
-# DuAnTotNghiep - Coffee Sales BI Pipeline
+# DATN - PHÂN TÍCH HIỆU QUẢ TÁI CẤU TRÚC VÀ TÌNH HÌNH KINH DOANH CỦA DOANH NGHIỆP CÀ PHÊ
 
 Dự án xây dựng hệ thống xử lý, phân tích và trực quan hóa dữ liệu bán hàng cà phê. Luồng chính bắt đầu từ dữ liệu Excel gốc, thực hiện ETL bằng Python, tạo dữ liệu sạch, xây dựng Data Mart, huấn luyện mô hình dự báo doanh thu, đồng bộ dữ liệu lên Supabase và phục vụ dashboard Tableau.
 
